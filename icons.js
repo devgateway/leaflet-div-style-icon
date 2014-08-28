@@ -60,8 +60,15 @@ L.RectangleDivIcon = L._svgishDivIcon.extend({
   },
 
   _setCssStyles: function(el, options) {
-    el.style.width = this._size.x + 'px';
-    el.style.height = this._size.y + 'px';
+    var weight = options.weight ? options.weight : 0,
+        innerWidth = this._size.x - (weight / 2),
+        innerHeight = this._size.y - (weight / 2),
+        offsetX = (innerWidth / 2) + weight;
+        offsetY = (innerHeight / 2) + weight;
+    el.style.width = innerWidth + 'px';
+    el.style.height = innerHeight + 'px';
+    el.style.marginLeft = -offsetX + 'px';
+    el.style.marginTop = -offsetY + 'px';
     return L._svgishDivIcon.prototype._setCssStyles.apply(this, arguments);
   }
 });
@@ -74,8 +81,13 @@ L.CircleDivIcon = L._svgishDivIcon.extend({
   },
 
   _setCssStyles: function(el, options) {
-    el.style.width = this._radius * 2 + 'px';
-    el.style.height = this._radius * 2 + 'px';
+    var weight = options.weight ? options.weight : 0,
+        innerRadius = this._radius - (weight / 2),
+        offset = innerRadius + weight;
+    el.style.width = innerRadius * 2 + 'px';
+    el.style.height = innerRadius * 2 + 'px';
+    el.style.marginLeft = -offset + 'px';
+    el.style.marginTop = -offset + 'px';
     el.style.borderRadius = this._radius * 2 + 'px';
     return L._svgishDivIcon.prototype._setCssStyles.apply(this, arguments);
   }
