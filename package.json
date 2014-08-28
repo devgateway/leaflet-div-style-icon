@@ -1,6 +1,6 @@
 {
   "name": "leaflet-div-style-icon",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "DivIcons that can be passed svg-like style rules",
   "main": "icons.js",
   "scripts": {
