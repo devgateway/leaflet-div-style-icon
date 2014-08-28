@@ -88,7 +88,7 @@ L.CircleDivIcon = L._svgishDivIcon.extend({
     el.style.height = innerRadius * 2 + 'px';
     el.style.marginLeft = -offset + 'px';
     el.style.marginTop = -offset + 'px';
-    el.style.borderRadius = this._radius * 2 + 'px';
+    el.style.borderRadius = innerRadius + weight + 'px';
     return L._svgishDivIcon.prototype._setCssStyles.apply(this, arguments);
   }
 });
