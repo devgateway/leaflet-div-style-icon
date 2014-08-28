@@ -3,30 +3,7 @@
  */
 
 
-(function() {
-  var Ls = [];
-
-  // mix with any globally-defined underscore
-  if (typeof window.L !== "undefined" && window.L !== null) {
-    Ls.push(window.L);
-  }
-
-  // mix with node/browserify requires
-  if (typeof module !== "undefined" && module !== null) {
-    Ls.push(require('leaflet'));
-  }
-
-  // mix with requirejs underscore
-  if ((typeof requirejs !== "undefined" && requirejs !== null) &&
-      (typeof define !== "undefined" && define !== null)) {
-    define(['leaflet'], function(L) {
-      Ls.push(L);
-    });
-  }
-
-  return Ls;
-
-})().forEach(function(L) {
+(function(L) {
 
   var _svgishDivIcon = L.Icon.extend({
 
@@ -115,4 +92,4 @@
     return new L.RectangleDivIcon(size, options);
   };
 
-});
+})(window.L);
