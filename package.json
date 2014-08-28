@@ -1,0 +1,22 @@
+{
+  "name": "leaflet-div-style-icon",
+  "version": "0.0.1",
+  "description": "DivIcons that can be passed svg-like style rules",
+  "main": "icons.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:uniphil/leaflet-div-style-icon.git"
+  },
+  "keywords": [
+    "leaflet"
+  ],
+  "author": "uniphil",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/uniphil/leaflet-div-style-icon/issues"
+  },
+  "homepage": "https://github.com/uniphil/leaflet-div-style-icon"
+}
