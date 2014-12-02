@@ -18,6 +18,7 @@ L._svgishDivIcon = L.Icon.extend({
     dashArray: null,
     fill: true,
     fillColor: null,  // same as color by default
+    importantFill: false // if true it will use !important on fill, needed for printing.
     // fillOpacity: 0.2,
   },
 
@@ -41,7 +42,11 @@ L._svgishDivIcon = L.Icon.extend({
       });
     }
     if (options.fill) {
-      el.style.background = options.fillColor || options.color;
+      if (options.importantFill) {
+        el.style.setProperty ('background', (options.fillColor || options.color), 'important');
+      } else {
+        el.style.background =  options.fillColor || options.color;
+      }
       // TODO: fillOpacity... use rgba fillColor for now
     }
   },
